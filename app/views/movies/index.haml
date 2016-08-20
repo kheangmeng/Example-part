@@ -1,0 +1,23 @@
+%h1= pluralize(@movies.size, 'Movie')
+
+= link_to "New", new_movie_url
+%br
+- @movies.each do |movie|
+  = image_for(movie)
+  %br
+  %strong= link_to(movie.title, movie_url(movie))
+  // "movies/#{movie.id}"
+  %p= truncate(movie.description,length:20,seperate: ' ')
+  %table
+    %tr
+      %th Date:
+      %td= movie.released_on
+    %tr
+      %th Rating:
+      %td= movie.rating
+    %tr
+      %th Price:
+      %td= money_format(movie)
+    %tr 
+      %th Duration:
+      %td= movie.duration

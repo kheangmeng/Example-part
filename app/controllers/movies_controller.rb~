@@ -1,0 +1,6 @@
+class MoviesController < ApplicationController
+  def index
+	@times = Time.new
+	@movies = ["Iron Man", "Superman", "Spider-Man","Bat-Man"]
+  end	
+end

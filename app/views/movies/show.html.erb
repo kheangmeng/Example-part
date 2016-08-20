@@ -1,0 +1,14 @@
+<h1>Show Detail</h1>
+
+<h2>Movie ID <%= @movie.id %></h2>
+<h2>Movie Title <%= @movie.title %></h2> 
+<p><%= @movie.description %></p>
+<p>Total cost: <%= number_to_currency(@movie.total_gross) %></p>
+<p><%= @movie.released_on %></p>
+<p><%= image_for(@movie) %></p>
+<p>Duration :<%= @movie.duration %></p>>
+<%= link_to "Home",	movies_url %>
+<%= link_to "Edit",	edit_movie_url %>
+<%= link_to "New",	new_movie_url %>
+<%= link_to "Delete", movie_url(@movie), method: :delete,
+		data: {confirm: "Are you sure you want to delete this movie?"} %>
